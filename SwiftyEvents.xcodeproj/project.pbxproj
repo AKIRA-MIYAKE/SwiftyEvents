@@ -10,6 +10,9 @@
 		A63915C41ACC11B500B352A2 /* SwiftyEvents.h in Headers */ = {isa = PBXBuildFile; fileRef = A63915C31ACC11B500B352A2 /* SwiftyEvents.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A63915CA1ACC11B500B352A2 /* SwiftyEvents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63915BE1ACC11B500B352A2 /* SwiftyEvents.framework */; };
 		A63915D11ACC11B500B352A2 /* SwiftyEventsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63915D01ACC11B500B352A2 /* SwiftyEventsTests.swift */; };
+		A63915DB1ACC124B00B352A2 /* EventEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63915DA1ACC124B00B352A2 /* EventEmitter.swift */; };
+		A6E5BB5F1ACC1DB600F56E5E /* Listener.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E5BB5E1ACC1DB600F56E5E /* Listener.swift */; };
+		A6E5BB611ACC261900F56E5E /* Emittable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E5BB601ACC261900F56E5E /* Emittable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +32,9 @@
 		A63915C91ACC11B500B352A2 /* SwiftyEventsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyEventsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A63915CF1ACC11B500B352A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A63915D01ACC11B500B352A2 /* SwiftyEventsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyEventsTests.swift; sourceTree = "<group>"; };
+		A63915DA1ACC124B00B352A2 /* EventEmitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventEmitter.swift; sourceTree = "<group>"; };
+		A6E5BB5E1ACC1DB600F56E5E /* Listener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Listener.swift; sourceTree = "<group>"; };
+		A6E5BB601ACC261900F56E5E /* Emittable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emittable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +78,9 @@
 			isa = PBXGroup;
 			children = (
 				A63915C31ACC11B500B352A2 /* SwiftyEvents.h */,
+				A6E5BB601ACC261900F56E5E /* Emittable.swift */,
+				A63915DA1ACC124B00B352A2 /* EventEmitter.swift */,
+				A6E5BB5E1ACC1DB600F56E5E /* Listener.swift */,
 				A63915C11ACC11B500B352A2 /* Supporting Files */,
 			);
 			path = SwiftyEvents;
@@ -209,6 +218,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A63915DB1ACC124B00B352A2 /* EventEmitter.swift in Sources */,
+				A6E5BB5F1ACC1DB600F56E5E /* Listener.swift in Sources */,
+				A6E5BB611ACC261900F56E5E /* Emittable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +331,7 @@
 		A63915D51ACC11B500B352A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -328,12 +341,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		A63915D61ACC11B500B352A2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -395,6 +410,7 @@
 				A63915D61ACC11B500B352A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A63915D71ACC11B500B352A2 /* Build configuration list for PBXNativeTarget "SwiftyEventsTests" */ = {
 			isa = XCConfigurationList;
@@ -403,6 +419,7 @@
 				A63915D91ACC11B500B352A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

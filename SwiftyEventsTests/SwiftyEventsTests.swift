@@ -8,6 +8,7 @@
 
 import UIKit
 import XCTest
+import SwiftyEvents
 
 class SwiftyEventsTests: XCTestCase {
     
@@ -23,6 +24,13 @@ class SwiftyEventsTests: XCTestCase {
     
     func testExample() {
         // This is an example of a functional test case.
+        let emitter = EventEmitter<String, String>()
+        emitter.on("test") { (test: String) -> Void in
+            println(test)
+        }
+        
+        emitter.emit("test", argument: "testですよー")
+        
         XCTAssert(true, "Pass")
     }
     
