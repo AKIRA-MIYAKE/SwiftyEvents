@@ -68,5 +68,26 @@ class ListenerTests: XCTestCase {
         
         waitForExpectationsWithTimeout(2.0, handler: nil)
     }
+    
+    func testArgumentType() {
+        let expectation = expectationWithDescription("Execute function")
+        
+        let arg = "Argument"
+        
+        let g = { (argument: String) -> Void in
+            expectation.fulfill()
+            XCTAssertEqual(arg, argument, "Call nexted function")
+        }
+        
+        let f = { (function: ((argument: String) -> Void)) -> Void in
+            function(argument: arg)
+        }
+        
+        let l = Listener(function: f)
+        
+        l.exec(g)
+        
+        waitForExpectationsWithTimeout(2.0, handler: nil)
+    }
 
 }
