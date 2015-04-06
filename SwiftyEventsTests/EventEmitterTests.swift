@@ -142,7 +142,7 @@ class EventEmitterTests: XCTestCase {
         XCTAssertEqual(emitter.listeners(event3).count, 1, "Expect event3's listeners is not cleared")
     }
     
-    func testEmitOnedListeners() {
+    func testEmitListeners() {
         let ea = expectationWithDescription("Emit to listeneres")
         let eb = expectationWithDescription("Emit to listeneres")
         
@@ -196,8 +196,22 @@ class EventEmitterTests: XCTestCase {
         XCTAssertEqual(cb, 1, "Expect increment counter")
         
         emitter.emit(event, argument: arg)
+        emitter.emit(event, argument: arg)
         XCTAssertEqual(ca, 1, "Expect not increment counter")
-        XCTAssertEqual(cb, 2, "Expect increment counter")
+        XCTAssertEqual(cb, 3, "Expect increment counter")
+    }
+    
+    func testEmitOnceListenerOuterExec() {
+        let emitter = EventEmitter<String, Int>()
+        let event = "test"
+        
+        let listener = emitter.once(event) { (argument: Int) -> Void in
+            XCTAssert((argument == 0), "Call with listener's method")
+            XCTAssert(!(argument == 1), "Call with listener's method")
+        }
+        
+        listener.exec(0)
+        emitter.emit(event, argument: 1)
     }
     
 }
