@@ -82,7 +82,7 @@ func exec(argument: Argument) -> Void
 
 License
 ----------
-Copyright &copy; 2011 xxxxxx
+Copyright &copy; 2015 AKIRA-MIYAKE
 Distributed under the [MIT License][mit].
 
 [MIT]: http://www.opensource.org/licenses/mit-license.php
