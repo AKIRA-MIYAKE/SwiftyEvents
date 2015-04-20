@@ -14,11 +14,12 @@ public class EventEmitter<Event: Hashable, Argument: Any>: Emittable {
     
     typealias EventType = Event
     typealias ArgumentType = Argument
+    typealias FunctionType = ArgumentType -> Void
     
     
     // MARK: - Variables
     
-    private var _listenerDictionary: [Event: [Listener<Argument>]]
+    private var _listenerDictionary: [EventType: [Listener<ArgumentType>]]
     
     
     // MARK: - Initialize
@@ -34,7 +35,7 @@ public class EventEmitter<Event: Hashable, Argument: Any>: Emittable {
     
     // MARK: - Emittable
     
-    public func on(event: EventType, _ function: ArgumentType -> Void) -> Listener<ArgumentType> {
+    public func on(event: EventType, _ function: FunctionType) -> Listener<ArgumentType> {
         let listener = newListener(function)
         
         return on(event, listener: listener)
@@ -51,8 +52,8 @@ public class EventEmitter<Event: Hashable, Argument: Any>: Emittable {
     }
     
     
-    public func once(event: EventType, _ function: ArgumentType -> Void) -> Listener<ArgumentType> {
-        func newOnceFunction(function: ArgumentType -> Void) -> ArgumentType -> Void {
+    public func once(event: EventType, _ function: FunctionType) -> Listener<ArgumentType> {
+        func newOnceFunction(function: FunctionType) -> FunctionType {
             var didFire = false
             
             return { (arg: ArgumentType) -> Void in
@@ -122,7 +123,7 @@ public class EventEmitter<Event: Hashable, Argument: Any>: Emittable {
     }
     
     
-    public func newListener(function: ArgumentType -> Void) -> Listener<ArgumentType> {
+    public func newListener(function: FunctionType) -> Listener<ArgumentType> {
         return Listener(function: function)
     }
     

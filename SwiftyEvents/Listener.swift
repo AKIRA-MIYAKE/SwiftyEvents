@@ -10,15 +10,17 @@ import Foundation
 
 public class Listener<Argument: Any>: Equatable {
     
+    typealias Function = Argument -> Void
+    
     // MARK: - let
     
     private let identifier: String
-    private let function: Argument -> Void
+    private let function: Function
     
     
     // MARK: - Initialize
     
-    public init(function: Argument -> Void) {
+    public init(function: Function) {
         self.identifier = NSUUID().UUIDString
         self.function = function
     }
