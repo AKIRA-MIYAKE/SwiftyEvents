@@ -175,7 +175,6 @@
 				TargetAttributes = {
 					A63915BD1ACC11B500B352A2 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = X7DGUBWVFS;
 					};
 					A63915C81ACC11B500B352A2 = {
 						CreatedOnToolsVersion = 6.2;
