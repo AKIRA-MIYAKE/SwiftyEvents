@@ -8,9 +8,9 @@
 
 import Foundation
 
-public class Listener<Argument: Any>: Equatable {
+public class Listener<Value: Any>: Equatable {
     
-    typealias Function = Argument -> Void
+    typealias Function = Value -> Void
     
     // MARK: - let
     
@@ -28,8 +28,8 @@ public class Listener<Argument: Any>: Equatable {
     
     // MARK: - Method
     
-    public func exec(argument: Argument) {
-        function(argument)
+    public func exec(value: Value) {
+        function(value)
     }
     
 }

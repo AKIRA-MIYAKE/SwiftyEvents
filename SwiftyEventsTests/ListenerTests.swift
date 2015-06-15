@@ -56,35 +56,35 @@ class ListenerTests: XCTestCase {
     func testExec() {
         let expectation = self.expectationWithDescription("Execute function")
         
-        let arg = "Argument"
+        let val = "Value"
         
-        let f = { (argument: String) -> Void in
+        let f = { (value: String) -> Void in
             expectation.fulfill()
-            XCTAssertEqual(arg, argument, "Call function with argument")
+            XCTAssertEqual(val, value, "Call function with argument")
         }
         let la = Listener(function: f)
         
-        la.exec(arg)
+        la.exec(val)
         
         waitForExpectationsWithTimeout(2.0, handler: nil)
     }
     
     func testArgumentTypes() {
-        let la = Listener(function: { (argument: Int) -> Void in
-            XCTAssertEqual(1, argument, "Call function with Int")
+        let la = Listener(function: { (value: Int) -> Void in
+            XCTAssertEqual(1, value, "Call function with Int")
         })
         la.exec(1)
         
-        let lb = Listener(function: { (argument: CGRect) -> Void in
-            XCTAssertEqual(CGRectMake(10, 10, 10, 10), argument, "Call functin with Coordinate")
+        let lb = Listener(function: { (value: CGRect) -> Void in
+            XCTAssertEqual(CGRectMake(10, 10, 10, 10), value, "Call functin with Coordinate")
         })
         lb.exec(CGRectMake(10, 10, 10, 10))
         
-        let lc = Listener(function: { (argument: (Int) -> Int) -> Void in
-            XCTAssertEqual(10, argument(5), "Call function with Function")
+        let lc = Listener(function: { (value: (Int) -> Int) -> Void in
+            XCTAssertEqual(10, value(5), "Call function with Function")
         })
-        let function = { (argument: Int) -> Int in
-            return argument * 2
+        let function = { (value: Int) -> Int in
+            return value * 2
         }
         lc.exec(function)
     }

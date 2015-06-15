@@ -27,11 +27,11 @@ class EventEmitterTests: XCTestCase {
         let emitter = EventEmitter<String, String>()
         let event = "test"
         
-        let fa = { (argument: String) -> Void in
-            println(argument)
+        let fa = { (value: String) -> Void in
+            println(value)
         }
-        let fb = { (argument: String) -> Void in
-            println(argument)
+        let fb = { (value: String) -> Void in
+            println(value)
         }
         
         let la = emitter.on(event, fa)
@@ -46,12 +46,12 @@ class EventEmitterTests: XCTestCase {
         let emitter = EventEmitter<String, String>()
         let event = "test"
         
-        let la = Listener(function: { (argument: String) -> Void in
-            println(argument)
+        let la = Listener(function: { (value: String) -> Void in
+            println(value)
         })
         
-        let lb = Listener(function: { (argument: String) -> Void in
-            println(argument)
+        let lb = Listener(function: { (value: String) -> Void in
+            println(value)
         })
         
         emitter.on(event, listener: la)
@@ -66,11 +66,11 @@ class EventEmitterTests: XCTestCase {
         let emitter = EventEmitter<String, String>()
         let event = "test"
         
-        let fa = { (argument: String) -> Void in
-            println(argument)
+        let fa = { (value: String) -> Void in
+            println(value)
         }
-        let fb = { (argument: String) -> Void in
-            println(argument)
+        let fb = { (value: String) -> Void in
+            println(value)
         }
         
         let la = emitter.once(event, fa)
@@ -85,11 +85,11 @@ class EventEmitterTests: XCTestCase {
         let emitter = EventEmitter<String, String>()
         let event = "test"
         
-        let fa = { (argument: String) -> Void in
-            println(argument)
+        let fa = { (value: String) -> Void in
+            println(value)
         }
-        let fb = { (argument: String) -> Void in
-            println(argument)
+        let fb = { (value: String) -> Void in
+            println(value)
         }
         
         let la = emitter.on(event, fa)
@@ -106,11 +106,11 @@ class EventEmitterTests: XCTestCase {
         let emitter = EventEmitter<String, String>()
         let event = "test"
         
-        let fa = { (argument: String) -> Void in
-            println(argument)
+        let fa = { (value: String) -> Void in
+            println(value)
         }
-        let fb = { (argument: String) -> Void in
-            println(argument)
+        let fb = { (value: String) -> Void in
+            println(value)
         }
         
         let la = emitter.on(event, fa)
@@ -127,8 +127,8 @@ class EventEmitterTests: XCTestCase {
         let event2 = "test2"
         let event3 = "test3"
         
-        let f = { (argument: String) -> Void in
-            println(argument)
+        let f = { (value: String) -> Void in
+            println(value)
         }
         
         emitter.on("test1", f)
@@ -148,21 +148,21 @@ class EventEmitterTests: XCTestCase {
         
         let emitter = EventEmitter<String, String>()
         let event = "test"
-        let arg = "Argument"
+        let val = "Value"
         
-        let fa = { (argument: String) -> Void in
+        let fa = { (value: String) -> Void in
             ea.fulfill()
-            XCTAssertEqual(arg, argument, "Call function with argument")
+            XCTAssertEqual(val, value, "Call function with argument")
         }
-        let fb = { (argument: String) -> Void in
+        let fb = { (value: String) -> Void in
             eb.fulfill()
-            XCTAssertEqual(arg, argument, "Call function with argument")
+            XCTAssertEqual(val, value, "Call function with argument")
         }
         
         let la = emitter.on(event, fa)
         let lb = emitter.on(event, fb)
         
-        emitter.emit(event, argument: arg)
+        emitter.emit(event, value: val)
         
         waitForExpectationsWithTimeout(2.0, handler: nil)
     }
@@ -170,33 +170,33 @@ class EventEmitterTests: XCTestCase {
     func testEmitOnceListenre() {
         let emitter = EventEmitter<String, String>()
         let event = "test"
-        let arg = "Argument"
+        let val = "Value"
         
         var ca = 0
         
-        let fa = { (argument: String) -> Void in
+        let fa = { (value: String) -> Void in
             ca++
             
-            XCTAssertEqual(arg, argument, "Call function with argument")
+            XCTAssertEqual(val, value, "Call function with argument")
         }
         
         var cb = 0
         
-        let fb = { (argument: String) -> Void in
+        let fb = { (value: String) -> Void in
             cb++
             
-            XCTAssertEqual(arg, argument, "Call function with argument")
+            XCTAssertEqual(val, value, "Call function with argument")
         }
         
         emitter.once(event, fa)
         emitter.on(event, fb)
         
-        emitter.emit(event, argument: arg)
+        emitter.emit(event, value: val)
         XCTAssertEqual(ca, 1, "Expect increment counter")
         XCTAssertEqual(cb, 1, "Expect increment counter")
         
-        emitter.emit(event, argument: arg)
-        emitter.emit(event, argument: arg)
+        emitter.emit(event, value: val)
+        emitter.emit(event, value: val)
         XCTAssertEqual(ca, 1, "Expect not increment counter")
         XCTAssertEqual(cb, 3, "Expect increment counter")
     }
@@ -211,7 +211,7 @@ class EventEmitterTests: XCTestCase {
         }
         
         listener.exec(0)
-        emitter.emit(event, argument: 1)
+        emitter.emit(event, value: 1)
     }
     
 }

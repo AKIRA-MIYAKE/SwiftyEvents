@@ -10,21 +10,21 @@ import Foundation
 
 public protocol Emittable {
     typealias EventType: Hashable
-    typealias ArgumentType: Any
-    typealias FunctionType = ArgumentType -> Void
+    typealias ValueType: Any
+    typealias FunctionType = ValueType -> Void
     
-    func on(event: EventType, _ function: FunctionType) -> Listener<ArgumentType>
-    func on(event: EventType, listener: Listener<ArgumentType>) -> Listener<ArgumentType>
+    func on(event: EventType, _ function: FunctionType) -> Listener<ValueType>
+    func on(event: EventType, listener: Listener<ValueType>) -> Listener<ValueType>
     
-    func once(event: EventType, _ function: FunctionType) -> Listener<ArgumentType>
+    func once(event: EventType, _ function: FunctionType) -> Listener<ValueType>
     
-    func removeListener(event: EventType, listener: Listener<ArgumentType>) -> Void
+    func removeListener(event: EventType, listener: Listener<ValueType>) -> Void
     func removeAllListeners() -> Void
     func removeAllListeners(events: [EventType]) -> Void
     
-    func listeners(event: EventType) -> [Listener<ArgumentType>]
+    func listeners(event: EventType) -> [Listener<ValueType>]
     
-    func emit(event: EventType, argument: ArgumentType) -> Bool
+    func emit(event: EventType, value: ValueType) -> Bool
     
-    func newListener(function: FunctionType) -> Listener<ArgumentType>
+    func newListener(function: FunctionType) -> Listener<ValueType>
 }

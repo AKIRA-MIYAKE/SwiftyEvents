@@ -8,18 +8,18 @@
 
 import Foundation
 
-public class EventEmitter<Event: Hashable, Argument: Any>: Emittable {
+public class EventEmitter<Event: Hashable, Value: Any>: Emittable {
     
     // MARK: - Typealias
     
     typealias EventType = Event
-    typealias ArgumentType = Argument
-    typealias FunctionType = ArgumentType -> Void
+    typealias ValueType = Value
+    typealias FunctionType = ValueType -> Void
     
     
     // MARK: - Variables
     
-    private var _listenerDictionary: [EventType: [Listener<ArgumentType>]]
+    private var _listenerDictionary: [EventType: [Listener<ValueType>]]
     
     
     // MARK: - Initialize
@@ -35,13 +35,13 @@ public class EventEmitter<Event: Hashable, Argument: Any>: Emittable {
     
     // MARK: - Emittable
     
-    public func on(event: EventType, _ function: FunctionType) -> Listener<ArgumentType> {
+    public func on(event: EventType, _ function: FunctionType) -> Listener<ValueType> {
         let listener = newListener(function)
         
         return on(event, listener: listener)
     }
     
-    public func on(event: EventType, listener: Listener<ArgumentType>) -> Listener<ArgumentType> {
+    public func on(event: EventType, listener: Listener<ValueType>) -> Listener<ValueType> {
         if let listeners = _listenerDictionary[event] {
             _listenerDictionary[event]?.append(listener)
         } else {
@@ -52,13 +52,13 @@ public class EventEmitter<Event: Hashable, Argument: Any>: Emittable {
     }
     
     
-    public func once(event: EventType, _ function: FunctionType) -> Listener<ArgumentType> {
+    public func once(event: EventType, _ function: FunctionType) -> Listener<ValueType> {
         func newOnceFunction(function: FunctionType) -> FunctionType {
             var didFire = false
             
-            return { (arg: ArgumentType) -> Void in
+            return { (value: ValueType) -> Void in
                 if !didFire {
-                    function(arg)
+                    function(value)
                     didFire = true
                 }
             }
@@ -71,7 +71,7 @@ public class EventEmitter<Event: Hashable, Argument: Any>: Emittable {
     }
     
     
-    public func removeListener(event: EventType, listener: Listener<ArgumentType>) {
+    public func removeListener(event: EventType, listener: Listener<ValueType>) {
         if let listeners = _listenerDictionary[event] {
             var index: Int?
             for (i, l) in enumerate(listeners) {
@@ -97,7 +97,7 @@ public class EventEmitter<Event: Hashable, Argument: Any>: Emittable {
     }
     
     
-    public func listeners(event: EventType) -> [Listener<ArgumentType>] {
+    public func listeners(event: EventType) -> [Listener<ValueType>] {
         if let listeners = _listenerDictionary[event] {
             return listeners
         } else {
@@ -106,11 +106,11 @@ public class EventEmitter<Event: Hashable, Argument: Any>: Emittable {
     }
     
     
-    public func emit(event: EventType, argument: ArgumentType) -> Bool {
+    public func emit(event: EventType, value: ValueType) -> Bool {
         if let listeners = _listenerDictionary[event] {
             if listeners.count != 0 {
                 for listener in listeners {
-                    listener.exec(argument)
+                    listener.exec(value)
                 }
                 
                 return true
@@ -123,7 +123,7 @@ public class EventEmitter<Event: Hashable, Argument: Any>: Emittable {
     }
     
     
-    public func newListener(function: FunctionType) -> Listener<ArgumentType> {
+    public func newListener(function: FunctionType) -> Listener<ValueType> {
         return Listener(function: function)
     }
     
