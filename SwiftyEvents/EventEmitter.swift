@@ -42,7 +42,7 @@ public class EventEmitter<Event: Hashable, Value: Any>: Emittable {
     }
     
     public func on(event: EventType, listener: Listener<ValueType>) -> Listener<ValueType> {
-        if let listeners = _listenerDictionary[event] {
+        if _listenerDictionary[event] != nil {
             _listenerDictionary[event]?.append(listener)
         } else {
             _listenerDictionary[event] = [listener]
@@ -74,7 +74,7 @@ public class EventEmitter<Event: Hashable, Value: Any>: Emittable {
     public func removeListener(event: EventType, listener: Listener<ValueType>) {
         if let listeners = _listenerDictionary[event] {
             var index: Int?
-            for (i, l) in enumerate(listeners) {
+            for (i, l) in listeners.enumerate() {
                 if l == listener {
                     index = i
                 }

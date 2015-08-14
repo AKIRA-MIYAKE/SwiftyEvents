@@ -24,7 +24,7 @@ class ListenerTests: XCTestCase {
     
     func testEquatable() {
         let f = { (str: String) -> Void in
-            println(str)
+            print(str)
         }
         
         let la = Listener(function: f)
@@ -38,7 +38,7 @@ class ListenerTests: XCTestCase {
     
     func testEquatableInArray() {
         let f = { (str: String) -> Void in
-            println(str)
+            print(str)
         }
         
         let la = Listener(function: f)
