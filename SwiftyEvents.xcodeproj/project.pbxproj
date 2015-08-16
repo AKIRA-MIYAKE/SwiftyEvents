@@ -10,6 +10,7 @@
 		A63915C41ACC11B500B352A2 /* SwiftyEvents.h in Headers */ = {isa = PBXBuildFile; fileRef = A63915C31ACC11B500B352A2 /* SwiftyEvents.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A63915CA1ACC11B500B352A2 /* SwiftyEvents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63915BE1ACC11B500B352A2 /* SwiftyEvents.framework */; };
 		A63915DB1ACC124B00B352A2 /* EventEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63915DA1ACC124B00B352A2 /* EventEmitter.swift */; };
+		A6C81E051B806D290002DE26 /* SubClassingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C81E041B806D290002DE26 /* SubClassingTests.swift */; };
 		A6E5BB5F1ACC1DB600F56E5E /* Listener.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E5BB5E1ACC1DB600F56E5E /* Listener.swift */; };
 		A6E5BB611ACC261900F56E5E /* Emittable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E5BB601ACC261900F56E5E /* Emittable.swift */; };
 		A6FC122A1ACD751B005208CE /* ListenerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FC12291ACD751B005208CE /* ListenerTests.swift */; };
@@ -33,6 +34,7 @@
 		A63915C91ACC11B500B352A2 /* SwiftyEventsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyEventsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A63915CF1ACC11B500B352A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A63915DA1ACC124B00B352A2 /* EventEmitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventEmitter.swift; sourceTree = "<group>"; };
+		A6C81E041B806D290002DE26 /* SubClassingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubClassingTests.swift; sourceTree = "<group>"; };
 		A6E5BB5E1ACC1DB600F56E5E /* Listener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Listener.swift; sourceTree = "<group>"; };
 		A6E5BB601ACC261900F56E5E /* Emittable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emittable.swift; sourceTree = "<group>"; };
 		A6FC12291ACD751B005208CE /* ListenerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListenerTests.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			children = (
 				A6FC12291ACD751B005208CE /* ListenerTests.swift */,
 				A6FC122B1ACD7C14005208CE /* EventEmitterTests.swift */,
+				A6C81E041B806D290002DE26 /* SubClassingTests.swift */,
 				A63915CE1ACC11B500B352A2 /* Supporting Files */,
 			);
 			path = SwiftyEventsTests;
@@ -234,6 +237,7 @@
 			files = (
 				A6FC122A1ACD751B005208CE /* ListenerTests.swift in Sources */,
 				A6FC122C1ACD7C14005208CE /* EventEmitterTests.swift in Sources */,
+				A6C81E051B806D290002DE26 /* SubClassingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,7 +10,7 @@ import Foundation
 
 public class Listener<Value: Any>: Equatable {
     
-    typealias Function = Value -> Void
+    public typealias Function = Value -> Void
     
     // MARK: - let
     
