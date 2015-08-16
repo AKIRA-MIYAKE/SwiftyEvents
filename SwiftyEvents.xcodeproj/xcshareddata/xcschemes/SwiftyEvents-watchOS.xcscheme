@@ -28,7 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "A6067F751B80830E0089F856"
+               BuildableName = "SwiftyEvents-watchOSTests.xctest"
+               BlueprintName = "SwiftyEvents-watchOSTests"
+               ReferencedContainer = "container:SwiftyEvents.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "A6067F681B8082260089F856"
+            BuildableName = "SwiftyEvents.framework"
+            BlueprintName = "SwiftyEvents-watchOS"
+            ReferencedContainer = "container:SwiftyEvents.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>

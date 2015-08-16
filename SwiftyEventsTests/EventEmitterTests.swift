@@ -6,7 +6,6 @@
 //  Copyright (c) 2015年 Miyake Akira. All rights reserved.
 //
 
-import UIKit
 import XCTest
 import SwiftyEvents
 

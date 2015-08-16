@@ -32,16 +32,6 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A6067F751B80830E0089F856"
-               BuildableName = "SwiftyEvents-watchOSTests.xctest"
-               BlueprintName = "SwiftyEvents-watchOSTests"
-               ReferencedContainer = "container:SwiftyEvents.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
                BlueprintIdentifier = "A63915C81ACC11B500B352A2"
                BuildableName = "SwiftyEvents-iOSTests.xctest"
                BlueprintName = "SwiftyEvents-iOSTests"

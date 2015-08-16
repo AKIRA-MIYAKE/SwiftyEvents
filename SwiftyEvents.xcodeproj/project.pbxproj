@@ -14,10 +14,10 @@
 		A6067F791B80830E0089F856 /* ListenerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FC12291ACD751B005208CE /* ListenerTests.swift */; };
 		A6067F7A1B80830E0089F856 /* EventEmitterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FC122B1ACD7C14005208CE /* EventEmitterTests.swift */; };
 		A6067F7B1B80830E0089F856 /* SubClassingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C81E041B806D290002DE26 /* SubClassingTests.swift */; };
-		A6067F7D1B80830E0089F856 /* SwiftyEvents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63915BE1ACC11B500B352A2 /* SwiftyEvents.framework */; };
 		A63915C41ACC11B500B352A2 /* SwiftyEvents.h in Headers */ = {isa = PBXBuildFile; fileRef = A63915C31ACC11B500B352A2 /* SwiftyEvents.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A63915CA1ACC11B500B352A2 /* SwiftyEvents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63915BE1ACC11B500B352A2 /* SwiftyEvents.framework */; };
 		A63915DB1ACC124B00B352A2 /* EventEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63915DA1ACC124B00B352A2 /* EventEmitter.swift */; };
+		A67E925E1B80CC860006660E /* SwiftyEvents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6067F691B8082260089F856 /* SwiftyEvents.framework */; };
 		A6C81E051B806D290002DE26 /* SubClassingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C81E041B806D290002DE26 /* SubClassingTests.swift */; };
 		A6E5BB5F1ACC1DB600F56E5E /* Listener.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E5BB5E1ACC1DB600F56E5E /* Listener.swift */; };
 		A6E5BB611ACC261900F56E5E /* Emittable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E5BB601ACC261900F56E5E /* Emittable.swift */; };
@@ -26,19 +26,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A6067F771B80830E0089F856 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A63915B51ACC11B500B352A2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A63915BD1ACC11B500B352A2;
-			remoteInfo = SwiftyEvents;
-		};
 		A63915CB1ACC11B500B352A2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A63915B51ACC11B500B352A2 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = A63915BD1ACC11B500B352A2;
 			remoteInfo = SwiftyEvents;
+		};
+		A67E925F1B80CC8B0006660E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A63915B51ACC11B500B352A2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A6067F681B8082260089F856;
+			remoteInfo = "SwiftyEvents-watchOS";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -70,7 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6067F7D1B80830E0089F856 /* SwiftyEvents.framework in Frameworks */,
+				A67E925E1B80CC860006660E /* SwiftyEvents.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,7 +202,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				A6067F761B80830E0089F856 /* PBXTargetDependency */,
+				A67E92601B80CC8B0006660E /* PBXTargetDependency */,
 			);
 			name = "SwiftyEvents-watchOSTests";
 			productName = SwiftyEventsTests;
@@ -361,15 +361,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		A6067F761B80830E0089F856 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A63915BD1ACC11B500B352A2 /* SwiftyEvents-iOS */;
-			targetProxy = A6067F771B80830E0089F856 /* PBXContainerItemProxy */;
-		};
 		A63915CC1ACC11B500B352A2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A63915BD1ACC11B500B352A2 /* SwiftyEvents-iOS */;
 			targetProxy = A63915CB1ACC11B500B352A2 /* PBXContainerItemProxy */;
+		};
+		A67E92601B80CC8B0006660E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A6067F681B8082260089F856 /* SwiftyEvents-watchOS */;
+			targetProxy = A67E925F1B80CC8B0006660E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -427,6 +427,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dream-of-electric-cat.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
 			};
 			name = Debug;
 		};
@@ -437,6 +438,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dream-of-electric-cat.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
 			};
 			name = Release;
 		};
@@ -599,6 +601,7 @@
 				A6067F701B8082260089F856 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A6067F7F1B80830E0089F856 /* Build configuration list for PBXNativeTarget "SwiftyEvents-watchOSTests" */ = {
 			isa = XCConfigurationList;
