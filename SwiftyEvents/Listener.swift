@@ -6,8 +6,6 @@
 //  Copyright (c) 2015年 Miyake Akira. All rights reserved.
 //
 
-import Foundation
-
 public class Listener<Value: Any>: Equatable {
     
     public typealias Function = Value -> Void

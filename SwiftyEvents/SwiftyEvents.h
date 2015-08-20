@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 Miyake Akira. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for SwiftyEvents.
 FOUNDATION_EXPORT double SwiftyEventsVersionNumber;

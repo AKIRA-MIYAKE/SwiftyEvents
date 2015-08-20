@@ -6,8 +6,6 @@
 //  Copyright (c) 2015年 Miyake Akira. All rights reserved.
 //
 
-import Foundation
-
 public class EventEmitter<Event: Hashable, Value: Any>: Emittable {
     
     // MARK: - Typealias
