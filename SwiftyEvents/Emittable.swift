@@ -6,8 +6,6 @@
 //  Copyright (c) 2015年 Miyake Akira. All rights reserved.
 //
 
-import Foundation
-
 public protocol Emittable {
     typealias EventType: Hashable
     typealias ValueType: Any

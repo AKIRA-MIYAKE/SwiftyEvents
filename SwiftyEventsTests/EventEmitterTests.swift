@@ -6,7 +6,6 @@
 //  Copyright (c) 2015年 Miyake Akira. All rights reserved.
 //
 
-import UIKit
 import XCTest
 import SwiftyEvents
 
@@ -28,10 +27,10 @@ class EventEmitterTests: XCTestCase {
         let event = "test"
         
         let fa = { (value: String) -> Void in
-            println(value)
+            print(value)
         }
         let fb = { (value: String) -> Void in
-            println(value)
+            print(value)
         }
         
         let la = emitter.on(event, fa)
@@ -47,11 +46,11 @@ class EventEmitterTests: XCTestCase {
         let event = "test"
         
         let la = Listener(function: { (value: String) -> Void in
-            println(value)
+            print(value)
         })
         
         let lb = Listener(function: { (value: String) -> Void in
-            println(value)
+            print(value)
         })
         
         emitter.on(event, listener: la)
@@ -67,10 +66,10 @@ class EventEmitterTests: XCTestCase {
         let event = "test"
         
         let fa = { (value: String) -> Void in
-            println(value)
+            print(value)
         }
         let fb = { (value: String) -> Void in
-            println(value)
+            print(value)
         }
         
         let la = emitter.once(event, fa)
@@ -86,10 +85,10 @@ class EventEmitterTests: XCTestCase {
         let event = "test"
         
         let fa = { (value: String) -> Void in
-            println(value)
+            print(value)
         }
         let fb = { (value: String) -> Void in
-            println(value)
+            print(value)
         }
         
         let la = emitter.on(event, fa)
@@ -107,14 +106,14 @@ class EventEmitterTests: XCTestCase {
         let event = "test"
         
         let fa = { (value: String) -> Void in
-            println(value)
+            print(value)
         }
         let fb = { (value: String) -> Void in
-            println(value)
+            print(value)
         }
         
-        let la = emitter.on(event, fa)
-        let lb = emitter.on(event, fb)
+        emitter.on(event, fa)
+        emitter.on(event, fb)
         
         emitter.removeAllListeners()
         
@@ -128,7 +127,7 @@ class EventEmitterTests: XCTestCase {
         let event3 = "test3"
         
         let f = { (value: String) -> Void in
-            println(value)
+            print(value)
         }
         
         emitter.on("test1", f)
@@ -159,8 +158,8 @@ class EventEmitterTests: XCTestCase {
             XCTAssertEqual(val, value, "Call function with argument")
         }
         
-        let la = emitter.on(event, fa)
-        let lb = emitter.on(event, fb)
+        emitter.on(event, fa)
+        emitter.on(event, fb)
         
         emitter.emit(event, value: val)
         
