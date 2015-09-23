@@ -11,13 +11,9 @@
 		A6067F721B8082900089F856 /* Emittable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E5BB601ACC261900F56E5E /* Emittable.swift */; };
 		A6067F731B8082900089F856 /* EventEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63915DA1ACC124B00B352A2 /* EventEmitter.swift */; };
 		A6067F741B8082900089F856 /* Listener.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E5BB5E1ACC1DB600F56E5E /* Listener.swift */; };
-		A6067F791B80830E0089F856 /* ListenerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FC12291ACD751B005208CE /* ListenerTests.swift */; };
-		A6067F7A1B80830E0089F856 /* EventEmitterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FC122B1ACD7C14005208CE /* EventEmitterTests.swift */; };
-		A6067F7B1B80830E0089F856 /* SubClassingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C81E041B806D290002DE26 /* SubClassingTests.swift */; };
 		A63915C41ACC11B500B352A2 /* SwiftyEvents.h in Headers */ = {isa = PBXBuildFile; fileRef = A63915C31ACC11B500B352A2 /* SwiftyEvents.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A63915CA1ACC11B500B352A2 /* SwiftyEvents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63915BE1ACC11B500B352A2 /* SwiftyEvents.framework */; };
 		A63915DB1ACC124B00B352A2 /* EventEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63915DA1ACC124B00B352A2 /* EventEmitter.swift */; };
-		A67E925E1B80CC860006660E /* SwiftyEvents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6067F691B8082260089F856 /* SwiftyEvents.framework */; };
 		A6C81E051B806D290002DE26 /* SubClassingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C81E041B806D290002DE26 /* SubClassingTests.swift */; };
 		A6E5BB5F1ACC1DB600F56E5E /* Listener.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E5BB5E1ACC1DB600F56E5E /* Listener.swift */; };
 		A6E5BB611ACC261900F56E5E /* Emittable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E5BB601ACC261900F56E5E /* Emittable.swift */; };
@@ -33,18 +29,10 @@
 			remoteGlobalIDString = A63915BD1ACC11B500B352A2;
 			remoteInfo = SwiftyEvents;
 		};
-		A67E925F1B80CC8B0006660E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A63915B51ACC11B500B352A2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A6067F681B8082260089F856;
-			remoteInfo = "SwiftyEvents-watchOS";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		A6067F691B8082260089F856 /* SwiftyEvents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyEvents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A6067F821B80830E0089F856 /* SwiftyEvents-watchOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftyEvents-watchOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A63915BE1ACC11B500B352A2 /* SwiftyEvents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyEvents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A63915C21ACC11B500B352A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A63915C31ACC11B500B352A2 /* SwiftyEvents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftyEvents.h; sourceTree = "<group>"; };
@@ -63,14 +51,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A6067F7C1B80830E0089F856 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A67E925E1B80CC860006660E /* SwiftyEvents.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,7 +87,6 @@
 				A63915BE1ACC11B500B352A2 /* SwiftyEvents.framework */,
 				A63915C91ACC11B500B352A2 /* SwiftyEvents-iOSTests.xctest */,
 				A6067F691B8082260089F856 /* SwiftyEvents.framework */,
-				A6067F821B80830E0089F856 /* SwiftyEvents-watchOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -191,24 +170,6 @@
 			productReference = A6067F691B8082260089F856 /* SwiftyEvents.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		A6067F751B80830E0089F856 /* SwiftyEvents-watchOSTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A6067F7F1B80830E0089F856 /* Build configuration list for PBXNativeTarget "SwiftyEvents-watchOSTests" */;
-			buildPhases = (
-				A6067F781B80830E0089F856 /* Sources */,
-				A6067F7C1B80830E0089F856 /* Frameworks */,
-				A6067F7E1B80830E0089F856 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A67E92601B80CC8B0006660E /* PBXTargetDependency */,
-			);
-			name = "SwiftyEvents-watchOSTests";
-			productName = SwiftyEventsTests;
-			productReference = A6067F821B80830E0089F856 /* SwiftyEvents-watchOSTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		A63915BD1ACC11B500B352A2 /* SwiftyEvents-iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A63915D41ACC11B500B352A2 /* Build configuration list for PBXNativeTarget "SwiftyEvents-iOS" */;
@@ -281,20 +242,12 @@
 				A63915BD1ACC11B500B352A2 /* SwiftyEvents-iOS */,
 				A63915C81ACC11B500B352A2 /* SwiftyEvents-iOSTests */,
 				A6067F681B8082260089F856 /* SwiftyEvents-watchOS */,
-				A6067F751B80830E0089F856 /* SwiftyEvents-watchOSTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		A6067F671B8082260089F856 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A6067F7E1B80830E0089F856 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -328,16 +281,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A6067F781B80830E0089F856 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A6067F791B80830E0089F856 /* ListenerTests.swift in Sources */,
-				A6067F7A1B80830E0089F856 /* EventEmitterTests.swift in Sources */,
-				A6067F7B1B80830E0089F856 /* SubClassingTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A63915B91ACC11B500B352A2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -365,11 +308,6 @@
 			isa = PBXTargetDependency;
 			target = A63915BD1ACC11B500B352A2 /* SwiftyEvents-iOS */;
 			targetProxy = A63915CB1ACC11B500B352A2 /* PBXContainerItemProxy */;
-		};
-		A67E92601B80CC8B0006660E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A6067F681B8082260089F856 /* SwiftyEvents-watchOS */;
-			targetProxy = A67E925F1B80CC8B0006660E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -415,32 +353,6 @@
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Release;
-		};
-		A6067F801B80830E0089F856 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = SwiftyEventsTests/info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dream-of-electric-cat.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-			};
-			name = Debug;
-		};
-		A6067F811B80830E0089F856 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = SwiftyEventsTests/info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dream-of-electric-cat.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
 			};
 			name = Release;
 		};
@@ -601,15 +513,6 @@
 			buildConfigurations = (
 				A6067F6F1B8082260089F856 /* Debug */,
 				A6067F701B8082260089F856 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A6067F7F1B80830E0089F856 /* Build configuration list for PBXNativeTarget "SwiftyEvents-watchOSTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A6067F801B80830E0089F856 /* Debug */,
-				A6067F811B80830E0089F856 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
