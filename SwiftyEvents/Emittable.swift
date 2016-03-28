@@ -7,9 +7,9 @@
 //
 
 public protocol Emittable {
-    typealias EventType: Hashable
-    typealias ValueType: Any
-    typealias FunctionType = ValueType -> Void
+    associatedtype EventType: Hashable
+    associatedtype ValueType: Any
+    associatedtype FunctionType = ValueType -> Void
     
     func on(event: EventType, _ function: FunctionType) -> Listener<ValueType>
     func on(event: EventType, listener: Listener<ValueType>) -> Listener<ValueType>
