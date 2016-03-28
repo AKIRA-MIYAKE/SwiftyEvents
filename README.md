@@ -1,4 +1,4 @@
-SwiftyEvents
+SwiftyEvents [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 ======================
 SwiftyEventsはnode.jsのEventEmitterに影響を受けた、イベント通知のためのライブラリです。  
 NSNotificationより手軽に使うことができ、またNSObjectに依存しないことを目指して開発されています。  
