@@ -174,7 +174,7 @@ class EventEmitterTests: XCTestCase {
         var ca = 0
         
         let fa = { (value: String) -> Void in
-            ca++
+            ca += 1
             
             XCTAssertEqual(val, value, "Call function with argument")
         }
@@ -182,7 +182,7 @@ class EventEmitterTests: XCTestCase {
         var cb = 0
         
         let fb = { (value: String) -> Void in
-            cb++
+            cb += 1
             
             XCTAssertEqual(val, value, "Call function with argument")
         }
